@@ -56,6 +56,16 @@ class Image
         return $this->gdImage;
     }
 
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
     public function resize($max_width, $max_height)
     {
         $width = $this->width;
