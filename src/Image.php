@@ -26,6 +26,15 @@ class Image
         imagedestroy($this->gdImage);
     }
 
+    public static function load(ImageLoaderInterface $reader)
+    {
+        $image = $reader->loadImage();
+        if (false === $image) {
+            throw new RuntimeException("Invalid image.");
+        }
+        return new Image($image);
+    }
+
     /**
      * @param \GdImage $gdImage
      * @return void
@@ -38,21 +47,6 @@ class Image
             }
         }
         $this->gdImage = $gdImage;
-    }
-
-    public static function createNew(int $width, int $height)
-    {
-        $image = imagecreatetruecolor($width, $height);
-        return new Image($image);
-    }
-
-    public static function createFromJpeg(string $filename)
-    {
-        $image = imagecreatefromjpeg($filename);
-        if (false === $image) {
-            throw new RuntimeException("Invalid file {$filename}");
-        }
-        return new Image($image);
     }
 
     public function getGdImage()

@@ -1,10 +1,12 @@
 <?php
 
-namespace Francerz\Imaging;
+namespace Francerz\Imaging\Writers;
 
+use Francerz\Imaging\Image;
+use Francerz\Imaging\ImageWriterInterface;
 use InvalidArgumentException;
 
-class JpegImageSaver implements ImageSaverInterface
+class JpegImageWriter implements ImageWriterInterface
 {
     private $quality = -1;
 
@@ -16,7 +18,7 @@ class JpegImageSaver implements ImageSaverInterface
         $this->quality = $quality;
     }
 
-    public function saveImage(Image $image, string $filename)
+    public function writeImage(Image $image, string $filename)
     {
         imagejpeg($image->getGdImage(), $filename, $this->quality);
     }
