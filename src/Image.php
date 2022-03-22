@@ -47,6 +47,8 @@ class Image
             }
         }
         $this->gdImage = $gdImage;
+        $this->width = imagesx($gdImage);
+        $this->height = imagesy($gdImage);
     }
 
     public function getGdImage()
