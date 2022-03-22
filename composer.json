@@ -1,0 +1,18 @@
+{
+    "name": "francerz/imaging",
+    "description": "Image processing library",
+    "type": "library",
+    "license": "ISC",
+    "autoload": {
+        "psr-4": {
+            "Francerz\\Imaging\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Francerz",
+            "email": "francerzam@hotmail.com"
+        }
+    ],
+    "require": {}
+}
