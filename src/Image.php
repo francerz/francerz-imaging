@@ -26,9 +26,9 @@ class Image
         imagedestroy($this->gdImage);
     }
 
-    public static function load(ImageLoaderInterface $reader)
+    public static function load(ImageLoaderInterface $loader)
     {
-        $image = $reader->loadImage();
+        $image = $loader->loadImage();
         if (false === $image) {
             throw new RuntimeException("Invalid image.");
         }

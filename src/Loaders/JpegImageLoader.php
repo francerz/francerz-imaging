@@ -22,6 +22,6 @@ class JpegImageLoader implements ImageLoaderInterface
 
     public function loadImage()
     {
-        imagecreatefromjpeg($this->filename);
+        return imagecreatefromjpeg($this->filename);
     }
 }
